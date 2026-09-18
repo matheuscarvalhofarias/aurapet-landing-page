@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraPet — Spa, Boutique & Bem-Estar Animal de Alto Padrão</title>
+  <meta name="description" content="O refúgio 5 estrelas para quem é a sua melhor companhia. Banhos terapêuticos sem estresse, ozonioterapia, tosa artística na tesoura e monitoramento ao vivo.">
+  <meta name="theme-color" content="#082921">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              950: '#07211a',
+              900: '#0a2e23',
+              850: '#0f3d32',
+              800: '#14532d',
+              700: '#1b6956',
+              600: '#26876f',
+              500: '#34a88b',
+              100: '#d1fae5',
+              50: '#ecfdf5'
+            },
+            amber: {
+              450: '#f59e0b',
+              550: '#d97706',
+              50: '#fefce8'
+            },
+            cream: {
+              50: '#fdfbf7',
+              100: '#f7f4ea',
+              200: '#eee8d5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body class="bg-[#FAF8F5] text-stone-900 antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+  <!-- TOP BAR STATUS -->
+  <div class="bg-emerald-950 text-white text-xs py-2 px-4 border-b border-emerald-900/50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-2.5 w-2.5 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+        <span class="font-medium text-emerald-100">Aberto hoje até 20h</span>
+        <span class="text-emerald-500">•</span>
+        <span class="text-stone-300">Vagas VIP limitadas para este fim de semana</span>
+      </div>
+      <div class="flex items-center gap-4 text-emerald-100">
+        <span class="hidden md:inline">✨ 15% OFF no 1º banho com o cupom: <strong class="text-amber-400 tracking-wider">BEMVINDO15</strong></span>
+        <a href="https://wa.me/556196488260" target="_blank" class="flex items-center gap-1 hover:text-amber-300 transition-colors font-medium">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          (61) 96488-260
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header id="nav-header" class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-900 via-emerald-800 to-emerald-700 flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-2xl font-bold font-display tracking-tight text-emerald-950 flex items-center gap-1">
+              Aura<span class="text-amber-500">Pet</span>
+            </span>
+            <span class="block text-[10px] tracking-widest uppercase font-semibold text-emerald-800/80 -mt-1">
+              Spa & Boutique Animal
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700">
+          <a href="#diferenciais" class="hover:text-emerald-800 transition-colors">Diferenciais</a>
+
+          <!-- Experiências com dropdown -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-emerald-800 transition-colors focus:outline-none">
+              Experiências
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-800 transition-all group-hover:rotate-180 duration-200"></i>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 glass-card rounded-2xl shadow-xl border border-stone-200/80 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 z-50">
+              <a href="#servicos" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-stone-700 hover:bg-emerald-50 hover:text-emerald-800 transition-colors">
+                <i data-lucide="sparkles" class="w-4 h-4 text-emerald-700 shrink-0"></i>
+                Todos os Serviços
+              </a>
+              <a href="#calculadora" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-stone-700 hover:bg-emerald-50 hover:text-emerald-800 transition-colors">
+                <i data-lucide="calculator" class="w-4 h-4 text-emerald-700 shrink-0"></i>
+                Simulador de Spa
+              </a>
+              <div class="h-px bg-stone-100 mx-3 my-1"></div>
+              <a href="#planos" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-amber-700 hover:bg-amber-50 hover:text-amber-800 transition-colors">
+                <i data-lucide="crown" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                Clubinho VIP
+              </a>
+            </div>
+          </div>
+
+          <a href="#depoimentos" class="hover:text-emerald-800 transition-colors">Depoimentos</a>
+          <a href="#faq" class="hover:text-emerald-800 transition-colors">Dúvidas</a>
+        </nav>
+
+        <!-- CTA & Quick WhatsApp -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button class="btn-open-booking btn-shimmer bg-emerald-900 hover:bg-emerald-800 text-white font-semibold text-sm px-6 py-3 rounded-full shadow-lg shadow-emerald-950/15 hover:shadow-xl transition-all flex items-center gap-2">
+            <i data-lucide="calendar-check" class="w-4 h-4 text-amber-400"></i>
+            Agendar Visita VIP
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" aria-expanded="false" class="lg:hidden p-2 rounded-xl text-emerald-950 hover:bg-emerald-100/50 transition-colors" aria-label="Abrir menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-emerald-900/10 px-6 py-6 space-y-4">
+      <nav class="flex flex-col space-y-1 font-medium text-stone-700">
+        <a href="#diferenciais" class="py-2 px-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition-colors">Diferenciais</a>
+        <a href="#servicos" class="py-2 px-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition-colors">Experiências</a>
+        <!-- Sub-itens de Experiências -->
+        <div class="pl-4 border-l-2 border-emerald-100 ml-3 flex flex-col gap-1">
+          <a href="#calculadora" class="py-1.5 px-3 text-sm rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition-colors flex items-center gap-2 text-stone-500">
+            <i data-lucide="calculator" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+            Simulador de Spa
+          </a>
+          <a href="#planos" class="py-1.5 px-3 text-sm rounded-xl hover:bg-amber-50 hover:text-amber-800 transition-colors flex items-center gap-2 text-amber-700 font-semibold">
+            <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-500 shrink-0"></i>
+            Clubinho VIP
+          </a>
+        </div>
+        <a href="#depoimentos" class="py-2 px-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition-colors">Depoimentos</a>
+        <a href="#faq" class="py-2 px-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition-colors">Perguntas Frequentes</a>
+      </nav>
+      <div class="pt-4 border-t border-stone-200 flex flex-col gap-3">
+        <button class="btn-open-booking w-full bg-emerald-900 text-white font-semibold py-3 rounded-xl shadow flex items-center justify-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4 text-amber-400"></i>
+          Agendar Visita VIP
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-8 pb-20 md:pt-14 md:pb-28 overflow-hidden gradient-subtle-glow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text & Copy -->
+        <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+          
+          <!-- Rating badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-emerald-800/10 text-xs font-semibold text-emerald-950">
+            <span class="flex text-amber-400">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+            </span>
+            <span class="font-bold">4.9/5.0</span>
+            <span class="text-stone-400">•</span>
+            <span class="text-stone-600">+1.800 tutores apaixonados no Google</span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-emerald-950 leading-[1.12] tracking-tight">
+            O spa dos sonhos para quem é a sua <span class="relative inline-block text-emerald-800 underline decoration-amber-400 decoration-wavy decoration-2">melhor companhia</span>.
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Esqueça o estresse das gaiolas e o barulho assustador. Na <strong>AuraPet</strong>, seu pet desfruta de aromaterapia com lavanda francesa, ozonioterapia revitalizante, produtos 100% veganos e <strong>câmeras HD ao vivo</strong> para você acompanhar cada segundo no celular.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <button class="btn-open-booking btn-shimmer w-full sm:w-auto bg-gradient-to-r from-emerald-900 to-emerald-800 hover:from-emerald-800 hover:to-emerald-700 text-white text-base font-semibold px-8 py-4 rounded-full shadow-xl shadow-emerald-950/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+              <i data-lucide="sparkles" class="w-5 h-5 text-amber-300"></i>
+              Agendar Experiência VIP
+            </button>
+
+            <a href="#calculadora" class="w-full sm:w-auto glass-card hover:bg-white text-emerald-950 hover:text-emerald-800 text-base font-semibold px-7 py-4 rounded-full border border-stone-300/80 hover:border-emerald-800/30 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="calculator" class="w-5 h-5 text-emerald-700"></i>
+              Simular Cuidados & Preço
+            </a>
+          </div>
+
+          <!-- Feature micro-tags -->
+          <div class="pt-4 grid grid-cols-3 gap-2 max-w-lg mx-auto lg:mx-0 text-left border-t border-stone-200/80">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center shrink-0">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-semibold text-stone-700">100% Fear-Free (Sem Gaiolas)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-amber-100/70 text-amber-700 flex items-center justify-center shrink-0">
+                <i data-lucide="video" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-semibold text-stone-700">Câmera ao Vivo para o Tutor</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center shrink-0">
+                <i data-lucide="leaf" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-semibold text-stone-700">Cosméticos Orgânicos & Veganos</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Decorative blurred ambient glows -->
+          <div class="absolute -top-10 -right-10 w-72 h-72 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-emerald-300/30 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Main Image Frame with Floating Cards -->
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <img 
+                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=80" 
+                alt="Cão feliz relaxado em dia de spa na AuraPet" 
+                class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <div class="flex items-center gap-2 text-xs font-semibold text-amber-300 uppercase tracking-wider mb-1">
+                  <i data-lucide="award" class="w-4 h-4"></i>
+                  Padrão Ouro Internacional
+                </div>
+                <h3 class="text-xl font-bold font-display">Tosa Artística & Hidratação Terapêutica</h3>
+                <p class="text-xs text-emerald-100/90 mt-1">Ambiente climatizado a 23°C com difusores de óleos essenciais terapêuticos.</p>
+              </div>
+            </div>
+
+            <!-- Floating Pill 1 (Top Left) -->
+            <div class="absolute -top-4 -left-6 z-20 glass-card p-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float-slow hidden sm:flex">
+              <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center">
+                <i data-lucide="bath" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-emerald-950">Ozonioterapia Relaxante</span>
+                <span class="block text-[10px] text-stone-500">Pele protegida & pelo macio</span>
+              </div>
+            </div>
+
+            <!-- Floating Pill 2 (Right Middle) -->
+            <div class="absolute top-1/2 -right-6 -translate-y-1/2 z-20 glass-card p-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float-delayed hidden sm:flex">
+              <div class="w-10 h-10 rounded-xl bg-emerald-800 text-white flex items-center justify-center">
+                <i data-lucide="video" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                  <span class="text-xs font-bold text-emerald-950">Live Cam HD</span>
+                </div>
+                <span class="text-[10px] text-stone-500">Acompanhe pelo celular</span>
+              </div>
+            </div>
+
+            <!-- Floating Pill 3 (Bottom Right) -->
+            <div class="absolute -bottom-6 right-4 z-20 glass-card py-2.5 px-4 rounded-2xl shadow-xl flex items-center gap-3 hidden sm:flex">
+              <div class="flex -space-x-2">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Tutora">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Tutor">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Tutora">
+              </div>
+              <div class="text-left">
+                <p class="text-xs font-bold text-stone-900">+12.000 Pets Felizes</p>
+                <p class="text-[10px] text-emerald-700 font-semibold">Zero sedativos • 100% carinho</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS EXCLUSIVOS (PILARS OF EXCELLENCE) -->
+  <section id="diferenciais" class="py-20 bg-white border-y border-stone-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100/60 px-3 py-1 rounded-full">
+          O Padrão AuraPet de Excelência
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 mt-3">
+          Por que somos o espaço mais amado pelos pets e tutores?
+        </h2>
+        <p class="text-stone-600 mt-3 text-base">
+          Criamos uma experiência onde a saúde física, emocional e comportamental do seu companheiro está sempre em primeiro lugar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="glass-card rounded-3xl p-8 hover:-translate-y-1.5 transition-all duration-300 border border-emerald-900/10 hover:border-emerald-700/40 hover:shadow-xl group">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-800 group-hover:text-amber-300 transition-all">
+            <i data-lucide="heart-handshake" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Filosofia Fear-Free</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Nada de contenções violentas, gaiolas frias ou barulho excessivo. Utilizamos aromaterapia calmante, música ambiente em frequência binaural e petiscos orgânicos.
+          </p>
+          <div class="mt-4 pt-4 border-t border-stone-100 flex items-center gap-1.5 text-xs font-bold text-emerald-800">
+            <span>Certificação Internacional</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card rounded-3xl p-8 hover:-translate-y-1.5 transition-all duration-300 border border-emerald-900/10 hover:border-emerald-700/40 hover:shadow-xl group">
+          <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all">
+            <i data-lucide="video" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Transparência em 4K</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Você não precisa ficar adivinhando como seu pet está sendo tratado. Nossas salas de banho e tosa transmitem imagens ao vivo diretamente para o seu WhatsApp/App.
+          </p>
+          <div class="mt-4 pt-4 border-t border-stone-100 flex items-center gap-1.5 text-xs font-bold text-amber-700">
+            <span>Câmeras ao Vivo HD</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card rounded-3xl p-8 hover:-translate-y-1.5 transition-all duration-300 border border-emerald-900/10 hover:border-emerald-700/40 hover:shadow-xl group">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-800 group-hover:text-amber-300 transition-all">
+            <i data-lucide="leaf" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Cosméticos Veganos</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Shampoos e máscaras com pH neutro balanceado, livres de sulfatos agressivos, corantes artificiais e parabenos. Ideal para pets com pele sensível ou atópica.
+          </p>
+          <div class="mt-4 pt-4 border-t border-stone-100 flex items-center gap-1.5 text-xs font-bold text-emerald-800">
+            <span>100% Cruelty-Free</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card rounded-3xl p-8 hover:-translate-y-1.5 transition-all duration-300 border border-emerald-900/10 hover:border-emerald-700/40 hover:shadow-xl group">
+          <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all">
+            <i data-lucide="stethoscope" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Vets de Prontidão</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Nossa equipe conta com médicos veterinários presentes em tempo integral, garantindo socorro imediato, avaliação dermatológica e checagem de bem-estar antes do banho.
+          </p>
+          <div class="mt-4 pt-4 border-t border-stone-100 flex items-center gap-1.5 text-xs font-bold text-amber-700">
+            <span>Segurança Total 24h</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIMULADOR INTERATIVO DE SPA & ORÇAMENTO -->
+  <section id="calculadora" class="py-24 bg-[#F4EFE6] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Explanatory Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-200/50 px-3 py-1 rounded-full">
+            Simulador Interativo
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 leading-tight">
+            Monte a experiência personalizada de spa do seu pet
+          </h2>
+          <p class="text-stone-600 text-base leading-relaxed">
+            Escolha o porte do seu companheiro e adicione os cuidados ideais. Veja a estimativa de tempo e valor calculada na hora, sem surpresas ou taxas ocultas.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-800 text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-emerald-950">Toalhas Térmicas Individuais</h4>
+                <p class="text-xs text-stone-500">Esterilizadas e lacradas individualmente para evitar qualquer contaminação cruzada.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-800 text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-emerald-950">Secagem Suave Silenciosa</h4>
+                <p class="text-xs text-stone-500">Secadores acústicos silenciosos que não assustam os ouvidos sensíveis dos pets.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-800 text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-emerald-950">Massagem Relaxante Cortesia</h4>
+                <p class="text-xs text-stone-500">Todo banho na AuraPet acompanha 5 minutos de massagem miofascial craniana.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Calculator Interactive Widget -->
+        <div class="lg:col-span-7">
+          <div class="glass-card bg-white/95 rounded-3xl p-6 sm:p-8 shadow-2xl border border-emerald-900/15">
+            
+            <!-- Step 1: Pet Type Selection -->
+            <div class="mb-6">
+              <label for="calc-pet-type" class="block text-sm font-bold text-emerald-950 mb-2">
+                1. Selecione o Porte ou Espécie do Pet:
+              </label>
+              <div class="relative">
+                <select id="calc-pet-type" class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm font-semibold rounded-2xl p-4 pr-10 focus:ring-2 focus:ring-emerald-700 focus:outline-none appearance-none transition-all">
+                  <option value="dog-mini">🐶 Cão Mini / Pequeno (até 10kg — ex: Shih-tzu, Maltês, Spitz)</option>
+                  <option value="dog-medium">🐕 Cão Médio (11 a 22kg — ex: Beagle, Cocker, Buldogue Francês)</option>
+                  <option value="dog-large">🦮 Cão Grande / Gigante (+23kg — ex: Golden, Labrador, Pastor Alemão)</option>
+                  <option value="cat-short">🐱 Gato de Pelo Curto (ex: SRD, Siamês, British)</option>
+                  <option value="cat-long">🦁 Gato de Pelo Longo / Persa (ex: Persa, Maine Coon, Ragdoll)</option>
+                </select>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              </div>
+            </div>
+
+            <!-- Step 2: Treatments Checkboxes -->
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-3">
+                <label class="block text-sm font-bold text-emerald-950">
+                  2. Escolha os Cuidados & Procedimentos:
+                </label>
+                <span id="calc-services-count" class="text-xs font-semibold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+                  1 selecionado
+                </span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[340px] overflow-y-auto pr-1">
+                
+                <!-- Service 1 -->
+                <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-700 bg-stone-50/50 hover:bg-emerald-50/40 cursor-pointer transition-all border-emerald-700 bg-emerald-50/50">
+                  <input type="checkbox" value="ozonio" checked class="calc-service-checkbox mt-1 w-4 h-4 rounded text-emerald-800 focus:ring-emerald-700">
+                  <div class="flex-1 text-xs">
+                    <div class="flex justify-between font-bold text-stone-900">
+                      <span>Banho c/ Ozônio</span>
+                      <span class="text-emerald-800 font-extrabold">R$ 85</span>
+                    </div>
+                    <p class="text-stone-500 mt-0.5">Revitalização, desodorização e brilho térmico (45 min).</p>
+                  </div>
+                </label>
+
+                <!-- Service 2 -->
+                <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-700 bg-stone-50/50 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                  <input type="checkbox" value="tosa-hig" class="calc-service-checkbox mt-1 w-4 h-4 rounded text-emerald-800 focus:ring-emerald-700">
+                  <div class="flex-1 text-xs">
+                    <div class="flex justify-between font-bold text-stone-900">
+                      <span>Tosa Higiênica</span>
+                      <span class="text-emerald-800 font-extrabold">R$ 45</span>
+                    </div>
+                    <p class="text-stone-500 mt-0.5">Patas limpas, barriga e região íntima protegidas (25 min).</p>
+                  </div>
+                </label>
+
+                <!-- Service 3 -->
+                <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-700 bg-stone-50/50 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                  <input type="checkbox" value="tosa-tesoura" class="calc-service-checkbox mt-1 w-4 h-4 rounded text-emerald-800 focus:ring-emerald-700">
+                  <div class="flex-1 text-xs">
+                    <div class="flex justify-between font-bold text-stone-900">
+                      <span>Tosa Tesoura Bebê</span>
+                      <span class="text-emerald-800 font-extrabold">R$ 95</span>
+                    </div>
+                    <p class="text-stone-500 mt-0.5">Escultura artística manual sem uso de máquinas barulhentas (60 min).</p>
+                  </div>
+                </label>
+
+                <!-- Service 4 -->
+                <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-700 bg-stone-50/50 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                  <input type="checkbox" value="aroma-spa" class="calc-service-checkbox mt-1 w-4 h-4 rounded text-emerald-800 focus:ring-emerald-700">
+                  <div class="flex-1 text-xs">
+                    <div class="flex justify-between font-bold text-stone-900">
+                      <span>Aromaterapia & Spa</span>
+                      <span class="text-emerald-800 font-extrabold">R$ 60</span>
+                    </div>
+                    <p class="text-stone-500 mt-0.5">Banheira de imersão com lavanda e massagem miofascial (30 min).</p>
+                  </div>
+                </label>
+
+                <!-- Service 5 -->
+                <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-700 bg-stone-50/50 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                  <input type="checkbox" value="argan-caviar" class="calc-service-checkbox mt-1 w-4 h-4 rounded text-emerald-800 focus:ring-emerald-700">
+                  <div class="flex-1 text-xs">
+                    <div class="flex justify-between font-bold text-stone-900">
+                      <span>Caviar & Argan</span>
+                      <span class="text-emerald-800 font-extrabold">R$ 55</span>
+                    </div>
+                    <p class="text-stone-500 mt-0.5">Reconstrução profunda da pelagem ressecada (20 min).</p>
+                  </div>
+                </label>
+
+                <!-- Service 6 -->
+                <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-700 bg-stone-50/50 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                  <input type="checkbox" value="unhas-orelhas" class="calc-service-checkbox mt-1 w-4 h-4 rounded text-emerald-800 focus:ring-emerald-700">
+                  <div class="flex-1 text-xs">
+                    <div class="flex justify-between font-bold text-stone-900">
+                      <span>Unhas & Orelhas</span>
+                      <span class="text-emerald-800 font-extrabold">R$ 35</span>
+                    </div>
+                    <p class="text-stone-500 mt-0.5">Lixamento delicado e assepsia auricular suave (15 min).</p>
+                  </div>
+                </label>
+
+                <!-- Service 7 -->
+                <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 hover:border-emerald-700 bg-stone-50/50 hover:bg-emerald-50/40 cursor-pointer transition-all sm:col-span-2">
+                  <input type="checkbox" value="dentes-enzim" class="calc-service-checkbox mt-1 w-4 h-4 rounded text-emerald-800 focus:ring-emerald-700">
+                  <div class="flex-1 text-xs">
+                    <div class="flex justify-between font-bold text-stone-900">
+                      <span>Higienização Dental com Gel Enzimático</span>
+                      <span class="text-emerald-800 font-extrabold">R$ 30</span>
+                    </div>
+                    <p class="text-stone-500 mt-0.5">Elimina o bafo e reduz o tártaro de forma 100% natural e palatável (15 min).</p>
+                  </div>
+                </label>
+
+              </div>
+            </div>
+
+            <!-- Calculation Live Output Bar -->
+            <div class="bg-gradient-to-br from-emerald-950 to-emerald-900 text-white rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+              <div>
+                <span class="block text-xs text-emerald-300 font-medium">Estimativa do Pacote VIP</span>
+                <div class="flex items-baseline gap-2 mt-0.5">
+                  <span id="calc-total-price" class="text-3xl font-extrabold font-display text-amber-300">R$ 85</span>
+                  <span class="text-xs text-emerald-200">/ sessão</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-xs text-stone-300 mt-1">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i>
+                  <span>Duração estimada: <strong id="calc-total-time" class="text-white">45 min</strong></span>
+                </div>
+              </div>
+
+              <button id="calc-book-btn" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold px-7 py-3.5 rounded-xl shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 text-sm">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                Agendar Este Pacote
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ANTES E DEPOIS - SLIDER DE TRANSFORMAÇÃO -->
+  <section id="transformacao" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full">
+          Grooming Artístico
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 mt-3">
+          Veja a mágica acontecer: Deslize para comparar
+        </h2>
+        <p class="text-stone-600 mt-2 text-base">
+          Transformamos pelagens embaraçadas em verdadeiras obras de arte, sempre priorizando o conforto e o bem-estar do pet.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-4 sm:p-6 rounded-3xl border border-emerald-900/10 shadow-2xl">
+          
+          <!-- Slider Component -->
+          <div id="grooming-ba-container" class="ba-container h-[350px] sm:h-[480px] w-full relative cursor-ew-resize">
+            
+            <!-- After Image (Bottom Layer) -->
+            <img 
+              id="grooming-ba-after" 
+              src="./Gemini_Generated_Image_3opnr3opnr3opnr3.jpg" 
+              alt="Pet após tosa artística e hidratação na AuraPet" 
+              class="ba-after-image"
+            >
+            <div class="absolute bottom-5 right-5 bg-emerald-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full z-10">
+              ✨ Depois: Spa Ouro & Tosa Bebê
+            </div>
+
+            <!-- Before Image (Top Layer, clipped) -->
+            <img 
+              id="grooming-ba-before" 
+              src="./Gemini_Generated_Image_3v2ln03v2ln03v2l.jpg" 
+              alt="Pet antes dos cuidados de spa" 
+              class="ba-before-image"
+            >
+            <div class="absolute bottom-5 left-5 bg-stone-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full z-10">
+              🐾 Antes: Pelagem ressecada e embaraçada
+            </div>
+
+            <!-- Handle Divider -->
+            <div id="grooming-ba-handle" class="ba-slider-handle">
+              <div class="ba-handle-button">
+                <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Slider Help / Legend -->
+          <div class="mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-2 px-2">
+            <span class="flex items-center gap-1.5 font-medium">
+              <i data-lucide="mouse-pointer" class="w-4 h-4 text-emerald-700"></i>
+              Arraste o cursor ou toque na tela para alternar entre o antes e o depois
+            </span>
+            <span class="text-emerald-800 font-semibold">
+              Procedimento: Banho com Ozônio + Tosa na Tesoura + Hidratação de Caviar
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE EXPERIÊNCIAS & SERVIÇOS -->
+  <section id="servicos" class="py-24 bg-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100/60 px-3 py-1 rounded-full">
+            Menu de Experiências
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 mt-3">
+            Cuidados pensados para cada fase da vida do seu pet
+          </h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2">
+          <button class="service-tab-btn px-5 py-2.5 rounded-full text-xs font-bold bg-emerald-800 text-white shadow-md transition-all" data-tab="all">
+            Todos os Serviços
+          </button>
+          <button class="service-tab-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-stone-700 hover:bg-emerald-50 transition-all" data-tab="spa">
+            Spa & Estética
+          </button>
+          <button class="service-tab-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-stone-700 hover:bg-emerald-50 transition-all" data-tab="hotel">
+            Hotel & Day Care
+          </button>
+          <button class="service-tab-btn px-5 py-2.5 rounded-full text-xs font-bold bg-white text-stone-700 hover:bg-emerald-50 transition-all" data-tab="saude">
+            Saúde & Medicina
+          </button>
+        </div>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Spa & Estética -->
+        <div class="service-catalog-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 border border-stone-200/80 shadow-lg group" data-category="spa">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" alt="Spa e banho relaxante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-emerald-900/90 backdrop-blur-md text-amber-300 text-xs font-bold px-3 py-1 rounded-full">
+              ★ Mais Procurado
+            </span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Spa & Estética</span>
+              <span class="text-xs text-stone-400">A partir de R$ 85</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Banho Terapêutico com Ozonioterapia</h3>
+            <p class="text-xs text-stone-600 leading-relaxed mb-5">
+              Água tratada com nanobolhas de ozônio que limpam profundamente, combatem fungos e dermatites, deixando os pelos inacreditavelmente sedosos e hidratados.
+            </p>
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-700"></i> ~50 minutos
+              </span>
+              <button class="btn-open-booking text-xs font-bold text-emerald-800 hover:text-amber-600 flex items-center gap-1 transition-colors" data-service="Banho com Ozonioterapia">
+                Agendar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Tosa Artística na Tesoura -->
+        <div class="service-catalog-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 border border-stone-200/80 shadow-lg group" data-category="spa">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80" alt="Tosa artística na tesoura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+              Artesanal
+            </span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-amber-700 uppercase tracking-wide">Estética Especializada</span>
+              <span class="text-xs text-stone-400">A partir de R$ 95</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Tosa Artística na Tesoura (Estilo Bebê)</h3>
+            <p class="text-xs text-stone-600 leading-relaxed mb-5">
+              Esculpida milímetro por milímetro com tesouras alemãs de alta precisão. Acabamento aveludado e natural, perfeito para Spitz, Poodle, Maltês e Shih-tzu.
+            </p>
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-700"></i> ~60 a 90 min
+              </span>
+              <button class="btn-open-booking text-xs font-bold text-emerald-800 hover:text-amber-600 flex items-center gap-1 transition-colors" data-service="Tosa Artística na Tesoura">
+                Agendar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Hotel & Day Care Boutique -->
+        <div class="service-catalog-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 border border-stone-200/80 shadow-lg group" data-category="hotel">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80" alt="Day care e recreação canina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-emerald-900/90 backdrop-blur-md text-amber-300 text-xs font-bold px-3 py-1 rounded-full">
+              Sem Grades
+            </span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Hotel & Day Care</span>
+              <span class="text-xs text-stone-400">Diárias de R$ 90</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Day Care Cognitivo & Hotel Boutique</h3>
+            <p class="text-xs text-stone-600 leading-relaxed mb-5">
+              1.200m² de grama natural, piscina segura para cães, enriquecimento ambiental e suítes com ar-condicionado e cromoterapia para noites de sono tranquilas.
+            </p>
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-700"></i> Meio período ou Integral
+              </span>
+              <button class="btn-open-booking text-xs font-bold text-emerald-800 hover:text-amber-600 flex items-center gap-1 transition-colors" data-service="Day Care & Hotel Boutique">
+                Agendar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Medicina Veterinária Integrativa -->
+        <div class="service-catalog-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 border border-stone-200/80 shadow-lg group" data-category="saude">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=800&q=80" alt="Veterinário examinando pet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+              Medicina Preventiva
+            </span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Saúde & Bem-Estar</span>
+              <span class="text-xs text-stone-400">Consultas de R$ 160</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Check-up Preventivo & Vacinação VIP</h3>
+            <p class="text-xs text-stone-600 leading-relaxed mb-5">
+              Protocolo completo de imunização importada, exames laboratoriais rápidos, orientações nutricionais e suporte veterinário acolhedor para filhotes e sêniores.
+            </p>
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-700"></i> ~45 minutos
+              </span>
+              <button class="btn-open-booking text-xs font-bold text-emerald-800 hover:text-amber-600 flex items-center gap-1 transition-colors" data-service="Consulta Veterinária">
+                Agendar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Spa Felino Fear-Free -->
+        <div class="service-catalog-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 border border-stone-200/80 shadow-lg group" data-category="spa">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="Gato tranquilo no spa felino" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-purple-900/90 backdrop-blur-md text-amber-300 text-xs font-bold px-3 py-1 rounded-full">
+              Espaço Cat-Only
+            </span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-purple-800 uppercase tracking-wide">Especial Felinos</span>
+              <span class="text-xs text-stone-400">A partir de R$ 90</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Spa Felino Exclusivo com Feliway</h3>
+            <p class="text-xs text-stone-600 leading-relaxed mb-5">
+              Ala 100% isolada e silenciosa, sem cheiro ou som de cães. Difusores de feromônio Feliway, toalhas aquecidas e escovação calmante para desembolo de pelos.
+            </p>
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-700"></i> ~45 a 60 min
+              </span>
+              <button class="btn-open-booking text-xs font-bold text-emerald-800 hover:text-amber-600 flex items-center gap-1 transition-colors" data-service="Spa Felino Feliway">
+                Agendar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Confeitaria & Boutique Gourmet -->
+        <div class="service-catalog-card glass-card rounded-3xl overflow-hidden hover:-translate-y-1.5 transition-all duration-300 border border-stone-200/80 shadow-lg group" data-category="hotel">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=800&q=80" alt="Boutique pet e petiscos naturais" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+              Gourmet & Festa
+            </span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-amber-700 uppercase tracking-wide">Boutique & Gastronomia</span>
+              <span class="text-xs text-stone-400">Kits de R$ 65</span>
+            </div>
+            <h3 class="text-xl font-bold font-display text-emerald-950 mb-2">Confeitaria Pet Natural & Festa de Aniversário</h3>
+            <p class="text-xs text-stone-600 leading-relaxed mb-5">
+              Bolos artesanais, cupcakes e biscoitos preparados com ingredientes naturais (sem açúcar, sem trigo refinado e sem corantes). Comemore o aniversário do seu filho de 4 patas!
+            </p>
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                <i data-lucide="heart" class="w-3.5 h-3.5 text-amber-500"></i> 100% Orgânico
+              </span>
+              <button class="btn-open-booking text-xs font-bold text-emerald-800 hover:text-amber-600 flex items-center gap-1 transition-colors" data-service="Kit Aniversário Pet">
+                Encomendar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLUBINHO PET (PLANOS DE ASSINATURA) -->
+  <section id="planos" class="py-24 bg-gradient-to-b from-white to-[#F6F3EC] border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full">
+          Clubinho AuraPet VIP
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 mt-3">
+          Praticidade mensal, economia real e carinho garantido
+        </h2>
+        <p class="text-stone-600 mt-2 text-base">
+          Garanta o horário fixo semanal do seu pet com os melhores profissionais e economize até 20% com nossos planos de assinatura.
+        </p>
+
+        <!-- Monthly / Annual Toggle -->
+        <div class="mt-8 inline-flex items-center gap-3 p-1.5 bg-stone-200/80 rounded-full">
+          <span id="pricing-label-monthly" class="text-xs font-bold text-emerald-900 px-3 py-1">Cobrança Mensal</span>
+          <button id="pricing-toggle" class="w-12 h-6 bg-stone-300 rounded-full p-0.5 transition-colors relative cursor-pointer" role="switch" aria-checked="false">
+            <span class="toggle-indicator block w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-200"></span>
+          </button>
+          <span id="pricing-label-annual" class="text-xs font-medium text-stone-600 px-3 py-1 flex items-center gap-1">
+            Plano Anual <span class="bg-amber-400 text-emerald-950 text-[10px] font-extrabold px-2 py-0.5 rounded-full">20% OFF</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+        
+        <!-- Plan 1: Essencial -->
+        <div class="glass-card rounded-3xl p-8 border border-stone-200/90 shadow-md flex flex-col justify-between hover:shadow-xl transition-all">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">Cuidado Contínuo</div>
+            <h3 class="text-2xl font-bold font-display text-emerald-950">Plano Essencial</h3>
+            <p class="text-xs text-stone-500 mt-1">Perfeito para manter a higiene e cheirinho agradável em dia.</p>
+            
+            <div class="my-6 pricing-card-amount" data-monthly="189" data-annual="151">
+              <div class="flex items-baseline gap-1">
+                <span class="text-xs font-semibold text-stone-500">R$</span>
+                <span class="amount-val text-4xl font-extrabold font-display text-emerald-950">189</span>
+                <span class="period-val text-xs text-stone-500">/mês</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-xs text-stone-600 border-t border-stone-100 pt-6">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>2 Banhos Ozonizados por mês</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>Corte de unhas e limpeza auricular</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>Toalhas esterilizadas individuais</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>Horário preferencial na agenda</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-stone-400 line-through">
+                <i data-lucide="x" class="w-4 h-4 text-stone-400 shrink-0"></i>
+                <span>Acesso a câmeras ao vivo HD</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-stone-100">
+            <button class="btn-open-booking w-full py-3 px-4 rounded-xl border-2 border-emerald-900 text-emerald-900 font-bold text-xs hover:bg-emerald-900 hover:text-white transition-all flex items-center justify-center gap-1.5" data-service="Plano Essencial">
+              Assinar Plano Essencial
+            </button>
+          </div>
+        </div>
+
+        <!-- Plan 2: Spa VIP (Featured) -->
+        <div class="relative glass-card rounded-3xl p-8 border-2 border-amber-500 shadow-2xl flex flex-col justify-between scale-105 z-10 bg-white">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 text-emerald-950 font-extrabold text-[11px] uppercase tracking-wider py-1 px-4 rounded-full shadow-md flex items-center gap-1">
+            <i data-lucide="flame" class="w-3.5 h-3.5"></i> O Mais Escolhido
+          </div>
+
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Experiência Completa</div>
+            <h3 class="text-2xl font-bold font-display text-emerald-950">Plano Spa VIP</h3>
+            <p class="text-xs text-stone-500 mt-1">O pacote queridinho com direito a tosa e câmera ao vivo.</p>
+            
+            <div class="my-6 pricing-card-amount" data-monthly="329" data-annual="263">
+              <div class="flex items-baseline gap-1">
+                <span class="text-xs font-semibold text-stone-500">R$</span>
+                <span class="amount-val text-4xl font-extrabold font-display text-emerald-950">329</span>
+                <span class="period-val text-xs text-stone-500">/mês</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-xs text-stone-600 border-t border-stone-100 pt-6">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                <span class="font-bold text-emerald-950">4 Banhos Ozonizados com Massagem (1/semana)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                <span>1 Tosa Higiênica ou Bebê inclusa no mês</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                <span>1 Hidratação Profunda de Caviar & Argan</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                <span class="font-semibold text-emerald-900">Acesso ilimitado às Câmeras HD ao Vivo</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                <span>10% de desconto na boutique e confeitaria</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-stone-100">
+            <button class="btn-open-booking btn-shimmer w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-900 to-emerald-800 hover:from-emerald-800 hover:to-emerald-700 text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-1.5" data-service="Plano Spa VIP">
+              <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+              Garantir Minha Vaga VIP
+            </button>
+          </div>
+        </div>
+
+        <!-- Plan 3: Imperial -->
+        <div class="glass-card rounded-3xl p-8 border border-stone-200/90 shadow-md flex flex-col justify-between hover:shadow-xl transition-all">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">Exclusividade Máxima</div>
+            <h3 class="text-2xl font-bold font-display text-emerald-950">Imperial Club</h3>
+            <p class="text-xs text-stone-500 mt-1">Tratamento de realeza com táxi pet cortesia e Day Care.</p>
+            
+            <div class="my-6 pricing-card-amount" data-monthly="549" data-annual="439">
+              <div class="flex items-baseline gap-1">
+                <span class="text-xs font-semibold text-stone-500">R$</span>
+                <span class="amount-val text-4xl font-extrabold font-display text-emerald-950">549</span>
+                <span class="period-val text-xs text-stone-500">/mês</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-xs text-stone-600 border-t border-stone-100 pt-6">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span class="font-bold">4 Banhos Terapêuticos Completos</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>Tosa Artística na Tesoura ilimitada</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>2 Diárias de Day Care com recreação</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span class="font-semibold text-emerald-900">Pet Táxi Climatizado (Leva e Traz) cortesia</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                <span>1 Avaliação Veterinária Clínica mensal inclusa</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-stone-100">
+            <button class="btn-open-booking w-full py-3 px-4 rounded-xl border-2 border-emerald-900 text-emerald-900 font-bold text-xs hover:bg-emerald-900 hover:text-white transition-all flex items-center justify-center gap-1.5" data-service="Imperial Club">
+              Assinar Imperial Club
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS E AVALIAÇÕES REAIS (PROVA SOCIAL) -->
+  <section id="depoimentos" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100/60 px-3 py-1 rounded-full">
+          Histórias Reais de Amor
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 mt-3">
+          O que dizem os tutores que confiam seus filhos a nós
+        </h2>
+        <div class="mt-3 flex items-center justify-center gap-2 text-stone-500 text-sm">
+          <span class="flex text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          </span>
+          <span class="font-bold text-stone-800">4.9 estrelas</span> em mais de 1.840 avaliações no Google Reviews
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="glass-card rounded-3xl p-8 border border-stone-200/80 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-stone-700 text-sm leading-relaxed italic">
+              "Meu cachorro Thor tinha pânico de pet shop, voltava tremendo de outros lugares. Na AuraPet, pela primeira vez ele entra abanando o rabo! Poder assistir tudo pela câmera no celular tirou toda a minha angústia. O cheirinho do banho dura mais de 10 dias!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center gap-3">
+            <img class="w-12 h-12 rounded-full object-cover border-2 border-emerald-800/20" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Mariana Silveira">
+            <div>
+              <h4 class="font-bold text-sm text-emerald-950">Mariana Silveira</h4>
+              <p class="text-xs text-stone-500">Tutora do Thor (Golden Retriever, 3 anos)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card rounded-3xl p-8 border border-stone-200/80 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-stone-700 text-sm leading-relaxed italic">
+              "Quem tem gato persa sabe o desespero que é tosar sem estressar o felino. A sala exclusiva de gatos com difusor de feromônios é outro nível! A tosa da Luna ficou impecável, pelagem soltinha como algodão e sem nenhum arranhão. Recomendo de olhos fechados."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center gap-3">
+            <img class="w-12 h-12 rounded-full object-cover border-2 border-emerald-800/20" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Dr. Rodrigo Mendes">
+            <div>
+              <h4 class="font-bold text-sm text-emerald-950">Rodrigo Mendes</h4>
+              <p class="text-xs text-stone-500">Tutor da Luna (Persa Branca, 2 anos)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card rounded-3xl p-8 border border-stone-200/80 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-stone-700 text-sm leading-relaxed italic">
+              "Assino o Plano VIP há 8 meses e não troco por nada. Eles mandam fotos carinhosas durante o procedimento, o corte de unha é feito sem sangramento ou desconforto, e os laços artesanais são muito fofos. O atendimento de vocês é de uma delicadeza rara."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center gap-3">
+            <img class="w-12 h-12 rounded-full object-cover border-2 border-emerald-800/20" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Fernanda Castro">
+            <div>
+              <h4 class="font-bold text-sm text-emerald-950">Fernanda Castro</h4>
+              <p class="text-xs text-stone-500">Tutora da Mel (Spitz Alemão, 4 anos)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ (PERGUNTAS FREQUENTES) -->
+  <section id="faq" class="py-24 bg-[#FAF8F5] border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100/60 px-3 py-1 rounded-full">
+          Tire suas Dúvidas
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 mt-3">
+          Perguntas Frequentes
+        </h2>
+        <p class="text-stone-600 mt-2 text-sm">
+          Transparência e segurança total para você e seu companheiro.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item glass-card rounded-2xl border border-stone-200/90 overflow-hidden">
+          <button class="faq-header w-full text-left p-5 flex items-center justify-between font-bold text-emerald-950 text-base hover:bg-stone-50/50 transition-colors">
+            <span>Vocês usam algum tipo de sedativo ou calmante medicamentoso?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-emerald-800 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+            <strong>Nunca!</strong> A AuraPet é categoricamente contra qualquer sedação sem prescrição e finalidade estritamente médica hospitalar. Nosso método de relaxamento é 100% natural e comportamental: usamos reforço positivo, aromaterapia de lavanda, toalhas aquecidas e pausas para carinho sempre que o pet demonstrar qualquer sinal de ansiedade.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass-card rounded-2xl border border-stone-200/90 overflow-hidden">
+          <button class="faq-header w-full text-left p-5 flex items-center justify-between font-bold text-emerald-950 text-base hover:bg-stone-50/50 transition-colors">
+            <span>Como funciona o acesso às câmeras ao vivo pelo celular?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-emerald-800 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+            Assim que seu pet dá entrada em nosso espaço, nosso sistema envia automaticamente para o seu WhatsApp um link individual e criptografado. Ao clicar no link, você assiste ao vivo às câmeras HD do posto onde seu pet está recebendo o banho ou a tosa, em tempo real.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass-card rounded-2xl border border-stone-200/90 overflow-hidden">
+          <button class="faq-header w-full text-left p-5 flex items-center justify-between font-bold text-emerald-950 text-base hover:bg-stone-50/50 transition-colors">
+            <span>Meu pet é idoso ou tem problemas articulares. Ele pode ser atendido?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-emerald-800 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+            Com certeza! Temos rampas ergonômicas de acesso às banheiras, pisos antiderrapantes acolchoados e banheiras com suportes ortopédicos especiais. O pet sênior não fica em pé por longos períodos; realizamos o procedimento com duas groomers para apoiar delicadamente o corpo do animal.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass-card rounded-2xl border border-stone-200/90 overflow-hidden">
+          <button class="faq-header w-full text-left p-5 flex items-center justify-between font-bold text-emerald-950 text-base hover:bg-stone-50/50 transition-colors">
+            <span>Quais vacinas meu pet precisa ter para frequentar a AuraPet?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-emerald-800 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+            Para garantir a biossegurança de todos os nossos hóspedes e clientes, exigimos carteira de vacinação em dia: V8/V10, Antirrábica e Giárdia/Gripe para cães; V4/V5 e Antirrábica para gatos, além de controle recente de pulgas e carrapatos.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item glass-card rounded-2xl border border-stone-200/90 overflow-hidden">
+          <button class="faq-header w-full text-left p-5 flex items-center justify-between font-bold text-emerald-950 text-base hover:bg-stone-50/50 transition-colors">
+            <span>Vocês oferecem serviço de Pet Táxi (Leva e Traz)?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-emerald-800 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+            Sim! Contamos com veículos próprios 100% higienizados e climatizados, equipados com caixas de transporte homologadas e cintos de segurança adequados. O serviço pode ser contratado de forma avulsa ou já está incluso no plano Imperial Club.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / CUPOM DE DESCONTO -->
+  <section class="py-16 bg-emerald-950 text-white relative overflow-hidden">
+    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 bg-emerald-900/80 border border-emerald-700/50 text-amber-300 text-xs font-bold px-4 py-1.5 rounded-full mb-4">
+        <i data-lucide="gift" class="w-4 h-4"></i>
+        Presente de Boas-Vindas
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight">
+        Receba <span class="text-amber-400">15% de Desconto</span> no primeiro banho ou tosa
+      </h2>
+      <p class="text-emerald-100/80 text-sm max-w-xl mx-auto mt-2 mb-8">
+        Inscreva-se com seu melhor e-mail e ative instantaneamente o cupom VIP com condições especiais para seu novo melhor amigo.
+      </p>
+
+      <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input 
+          type="email" 
+          id="newsletter-email" 
+          placeholder="Seu e-mail principal..." 
+          required 
+          class="flex-1 bg-emerald-900/60 border border-emerald-700 text-white placeholder-emerald-300/50 text-sm rounded-full px-6 py-3.5 focus:outline-none focus:ring-2 focus:ring-amber-400"
+        >
+        <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold text-sm px-8 py-3.5 rounded-full shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
+          <span>Resgatar Cupom</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#051A15] text-stone-300 pt-16 pb-12 border-t border-emerald-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-emerald-900/60">
+        
+        <!-- Brand column -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-800 text-amber-300 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <span class="text-2xl font-bold font-display text-white">
+              Aura<span class="text-amber-400">Pet</span>
+            </span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed max-w-sm">
+            O primeiro pet spa da região com protocolo 100% Fear-Free, ozonioterapia de alta pureza e transmissão ao vivo em alta resolução para os tutores.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" class="w-9 h-9 rounded-full bg-emerald-900/80 hover:bg-emerald-800 text-amber-300 flex items-center justify-center transition-colors">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-emerald-900/80 hover:bg-emerald-800 text-amber-300 flex items-center justify-center transition-colors">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-emerald-900/80 hover:bg-emerald-800 text-amber-300 flex items-center justify-center transition-colors">
+              <i data-lucide="youtube" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links 1 -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Experiências</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#servicos" class="hover:text-amber-300 transition-colors">Banho com Ozônio</a></li>
+            <li><a href="#servicos" class="hover:text-amber-300 transition-colors">Tosa Bebê na Tesoura</a></li>
+            <li><a href="#servicos" class="hover:text-amber-300 transition-colors">Spa & Aromaterapia</a></li>
+            <li><a href="#servicos" class="hover:text-amber-300 transition-colors">Spa Cat-Only</a></li>
+            <li><a href="#servicos" class="hover:text-amber-300 transition-colors">Day Care Cognitivo</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400">AuraPet Club</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#planos" class="hover:text-amber-300 transition-colors">Planos Mensais</a></li>
+            <li><a href="#planos" class="hover:text-amber-300 transition-colors">Vantagens Anuais</a></li>
+            <li><a href="#calculadora" class="hover:text-amber-300 transition-colors">Simulador de Custos</a></li>
+            <li><a href="#faq" class="hover:text-amber-300 transition-colors">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Hours -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Localização & Horário</h4>
+          <div class="text-xs text-stone-400 space-y-2 leading-relaxed">
+            <p class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+              <span>Alameda das Magnólias, 1240 — Jardins, São Paulo - SP</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>Seg à Sáb: 08h às 20h</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>(61) 96488-260</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500">
+        <p>© 2026 AuraPet Spa & Boutique Animal Ltda. Todos os direitos reservados.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-stone-300">Termos de Uso</a>
+          <span>•</span>
+          <a href="#" class="hover:text-stone-300">Política de Privacidade</a>
+          <span>•</span>
+          <a href="#" class="hover:text-stone-300">Garantia Fear-Free</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL DE AGENDAMENTO VIP (3 PASSOS COM WHATSAPP) -->
+  <div id="booking-modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-emerald-950/70 backdrop-blur-md">
+    
+    <div class="modal-content glass-card bg-white w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl border border-stone-200">
+      
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-emerald-950 to-emerald-900 text-white p-6 relative">
+        <button id="btn-close-modal" class="absolute top-5 right-5 text-emerald-200 hover:text-white p-1 rounded-full hover:bg-emerald-800 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        <span class="text-[11px] font-extrabold uppercase tracking-widest text-amber-400 flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Agendamento VIP Exclusivo
+        </span>
+        <h3 class="text-2xl font-bold font-display mt-1">Reserve o momento especial do seu pet</h3>
+      </div>
+
+      <!-- Step Wizard Body -->
+      <div id="modal-wizard-container" class="p-6 sm:p-8">
+        
+        <!-- Step Progress Indicator -->
+        <div class="flex items-center justify-between mb-8 relative">
+          <div class="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-0.5 bg-stone-200 -z-0"></div>
+          
+          <div class="relative z-10 flex flex-col items-center">
+            <div id="step-indicator-1" class="w-8 h-8 rounded-full bg-emerald-800 text-white flex items-center justify-center text-xs font-bold shadow">
+              1
+            </div>
+            <span class="text-[10px] font-bold text-stone-600 mt-1">Seu Pet</span>
+          </div>
+
+          <div class="relative z-10 flex flex-col items-center">
+            <div id="step-indicator-2" class="w-8 h-8 rounded-full bg-stone-200 text-stone-600 flex items-center justify-center text-xs font-bold shadow">
+              2
+            </div>
+            <span class="text-[10px] font-bold text-stone-600 mt-1">Data & Cuidados</span>
+          </div>
+
+          <div class="relative z-10 flex flex-col items-center">
+            <div id="step-indicator-3" class="w-8 h-8 rounded-full bg-stone-200 text-stone-600 flex items-center justify-center text-xs font-bold shadow">
+              3
+            </div>
+            <span class="text-[10px] font-bold text-stone-600 mt-1">Confirmação</span>
+          </div>
+        </div>
+
+        <form id="booking-form">
+          
+          <!-- STEP 1: DADOS DO PET -->
+          <div id="modal-panel-step-1" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-emerald-950 mb-1">Nome do Pet *</label>
+              <input type="text" id="modal-pet-name" placeholder="Ex: Cookie, Pipoca, Thor..." required class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-emerald-950 mb-1">Espécie</label>
+                <select id="modal-pet-type-select" class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-3 py-3 focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+                  <option value="Cão">🐶 Cachorro</option>
+                  <option value="Gato">🐱 Gato</option>
+                  <option value="Outro">🐾 Outro pet</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-emerald-950 mb-1">Raça (ou SRD)</label>
+                <input type="text" id="modal-pet-breed" placeholder="Ex: Shih-tzu, Maltês..." class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-emerald-950 mb-2">Temperamento do Pet no Banho:</label>
+              <div class="grid grid-cols-3 gap-2 text-xs">
+                <label class="flex items-center justify-center gap-1.5 p-2.5 rounded-xl border border-stone-200 cursor-pointer hover:bg-stone-50 has-[:checked]:border-emerald-700 has-[:checked]:bg-emerald-50">
+                  <input type="radio" name="modal-pet-temperament" value="Dócil e calmo" checked class="text-emerald-800">
+                  <span class="font-medium">Dócil</span>
+                </label>
+                <label class="flex items-center justify-center gap-1.5 p-2.5 rounded-xl border border-stone-200 cursor-pointer hover:bg-stone-50 has-[:checked]:border-emerald-700 has-[:checked]:bg-emerald-50">
+                  <input type="radio" name="modal-pet-temperament" value="Medroso / Assustado" class="text-emerald-800">
+                  <span class="font-medium">Medroso</span>
+                </label>
+                <label class="flex items-center justify-center gap-1.5 p-2.5 rounded-xl border border-stone-200 cursor-pointer hover:bg-stone-50 has-[:checked]:border-emerald-700 has-[:checked]:bg-emerald-50">
+                  <input type="radio" name="modal-pet-temperament" value="Agitado / Brincalhão" class="text-emerald-800">
+                  <span class="font-medium">Agitado</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="pt-4 flex justify-end">
+              <button type="button" id="modal-step-next-1" class="bg-emerald-900 hover:bg-emerald-800 text-white font-bold text-xs px-6 py-3 rounded-xl flex items-center gap-2 transition-all">
+                <span>Continuar para Data</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: DATA & HORÁRIO -->
+          <div id="modal-panel-step-2" class="space-y-4 hidden">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-emerald-950 mb-1">Data Preferencial *</label>
+                <input type="date" id="modal-booking-date" required class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-emerald-950 mb-1">Período Desejado</label>
+                <select id="modal-booking-period" class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-3 py-3 focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+                  <option value="Manhã (08h às 12h)">Manhã (08h às 12h)</option>
+                  <option value="Tarde (13h às 17h)">Tarde (13h às 17h)</option>
+                  <option value="Final do Dia (17h às 20h)">Final do Dia (17h às 20h)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-center gap-2.5">
+              <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0"></i>
+              <span>Vagas com tosa na tesoura requerem confirmação de disponibilidade da groomer sênior.</span>
+            </div>
+
+            <div class="pt-4 flex justify-between">
+              <button type="button" id="modal-step-back-2" class="text-stone-600 hover:text-stone-900 font-bold text-xs px-4 py-3">
+                Voltar
+              </button>
+              <button type="button" id="modal-step-next-2" class="bg-emerald-900 hover:bg-emerald-800 text-white font-bold text-xs px-6 py-3 rounded-xl flex items-center gap-2 transition-all">
+                <span>Continuar para Confirmação</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: TUTOR & WHATSAPP -->
+          <div id="modal-panel-step-3" class="space-y-4 hidden">
+            
+            <!-- Resumo das Escolhas -->
+            <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-800/10 text-xs space-y-1.5">
+              <div class="flex justify-between font-semibold text-emerald-950">
+                <span>Pet:</span>
+                <span id="modal-summary-pet" class="text-stone-700">Thor</span>
+              </div>
+              <div class="flex justify-between font-semibold text-emerald-950">
+                <span>Data:</span>
+                <span id="modal-summary-date" class="text-stone-700">18/09/2026 • Manhã</span>
+              </div>
+              <div class="flex justify-between font-semibold text-emerald-950">
+                <span>Procedimentos:</span>
+                <span id="modal-summary-services" class="text-stone-700 font-normal text-right max-w-[240px]">Banho com Ozônio</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-emerald-950 mb-1">Seu Nome Completo *</label>
+              <input type="text" id="modal-tutor-name" placeholder="Ex: Carolina Almeida" required class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-emerald-950 mb-1">WhatsApp para Contato e Câmera ao Vivo *</label>
+              <input type="tel" id="modal-tutor-phone" placeholder="(11) 99999-9999" required class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-emerald-950 mb-1">Alguma alergia ou observação especial?</label>
+              <textarea id="modal-tutor-notes" rows="2" placeholder="Ex: Alergia a frango, medo de secador perto dos ouvidos..." class="w-full bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-700 focus:outline-none"></textarea>
+            </div>
+
+            <div class="pt-4 flex justify-between items-center">
+              <button type="button" id="modal-step-back-3" class="text-stone-600 hover:text-stone-900 font-bold text-xs px-4 py-3">
+                Voltar
+              </button>
+              <button type="submit" class="bg-gradient-to-r from-emerald-900 to-emerald-800 hover:from-emerald-800 hover:to-emerald-700 text-white font-bold text-xs px-7 py-3.5 rounded-xl shadow-lg flex items-center gap-2 transition-all">
+                <i data-lucide="send" class="w-4 h-4 text-amber-300"></i>
+                <span>Finalizar Agendamento</span>
+              </button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- SUCCESS SCREEN -->
+      <div id="modal-success-screen" class="p-8 text-center space-y-5 hidden">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-md">
+          <i data-lucide="check-check" class="w-8 h-8"></i>
+        </div>
+        <div>
+          <span id="modal-success-code" class="text-xs font-mono font-bold bg-stone-100 px-3 py-1 rounded-full text-stone-600">#AURAPET-8821</span>
+          <h3 class="text-2xl font-bold font-display text-emerald-950 mt-2">Agendamento Pré-Confirmado!</h3>
+          <p class="text-stone-600 text-xs max-w-md mx-auto mt-1 leading-relaxed">
+            Seus dados foram organizados. Clique no botão abaixo para abrir seu WhatsApp e garantir o horário VIP instantaneamente com a nossa concierge.
+          </p>
+        </div>
+
+        <div class="pt-2">
+          <a id="btn-wa-confirm" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-8 py-4 rounded-2xl shadow-xl hover:scale-105 transition-all w-full">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Confirmar Agora no WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="./src/main.js"></script>
+</body>
+</html>
