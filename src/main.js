@@ -169,41 +169,68 @@ function initSpaCalculator() {
    ========================================================================== */
 function initBeforeAfterSlider() {
   const container = document.getElementById('grooming-ba-container');
-  const beforeImg = document.getElementById('grooming-ba-before');
+  const beforeLayer = document.getElementById('ba-before-layer');
   const handle = document.getElementById('grooming-ba-handle');
+  const labelBefore = document.getElementById('ba-label-before');
+  const labelAfter = document.getElementById('ba-label-after');
 
-  if (!container || !beforeImg || !handle) return;
+  if (!container || !beforeLayer || !handle) return;
 
   let isDragging = false;
+  let cachedRect = null;
+  let rafId = null;
 
-  function updateSlider(xPos) {
-    const rect = container.getBoundingClientRect();
-    let offsetX = xPos - rect.left;
-    if (offsetX < 0) offsetX = 0;
-    if (offsetX > rect.width) offsetX = rect.width;
+  function render(percent) {
+    const clamped = Math.max(0, Math.min(100, percent));
+    beforeLayer.style.clipPath = `polygon(0 0, ${clamped}% 0, ${clamped}% 100%, 0 100%)`;
+    handle.style.left = `${clamped}%`;
 
-    const percentage = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
-
-    beforeImg.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
-    handle.style.left = `${percentage}%`;
+    // Aparece ANTES quando a foto for antes (>= 50%); se arrastar para o depois (< 50%), ANTES desaparece e aparece somente DEPOIS
+    if (labelBefore && labelAfter) {
+      if (clamped >= 50) {
+        labelBefore.style.opacity = '1';
+        labelBefore.style.transform = 'scale(1)';
+        labelAfter.style.opacity = '0';
+        labelAfter.style.transform = 'scale(0.9)';
+      } else {
+        labelBefore.style.opacity = '0';
+        labelBefore.style.transform = 'scale(0.9)';
+        labelAfter.style.opacity = '1';
+        labelAfter.style.transform = 'scale(1)';
+      }
+    }
   }
 
-  // Pointer & Touch handling
+  // Instant Dragging with zero layout thrashing
+  function updateFromClientX(clientX) {
+    if (!cachedRect) cachedRect = container.getBoundingClientRect();
+    let offsetX = clientX - cachedRect.left;
+    if (offsetX < 0) offsetX = 0;
+    if (offsetX > cachedRect.width) offsetX = cachedRect.width;
+    const percent = (offsetX / cachedRect.width) * 100;
+
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      render(percent);
+    });
+  }
+
   const startDrag = (e) => {
     isDragging = true;
-    updateSlider(e.clientX || (e.touches && e.touches[0].clientX));
+    cachedRect = container.getBoundingClientRect();
+    const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX);
+    if (clientX !== undefined) updateFromClientX(clientX);
   };
 
   const onDrag = (e) => {
     if (!isDragging) return;
-    const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-    if (clientX !== undefined) {
-      updateSlider(clientX);
-    }
+    const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX);
+    if (clientX !== undefined) updateFromClientX(clientX);
   };
 
   const stopDrag = () => {
     isDragging = false;
+    cachedRect = null;
   };
 
   container.addEventListener('mousedown', startDrag);
@@ -213,6 +240,9 @@ function initBeforeAfterSlider() {
   container.addEventListener('touchstart', startDrag, { passive: true });
   window.addEventListener('touchmove', onDrag, { passive: true });
   window.addEventListener('touchend', stopDrag);
+
+  // Initialize at 50%
+  render(50);
 }
 
 /* ==========================================================================

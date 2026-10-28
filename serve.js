@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3333;
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
   '.css': 'text/css; charset=UTF-8',
@@ -38,7 +38,12 @@ const server = http.createServer((req, res) => {
     }
 
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-    res.writeHead(200, { 'Content-Type': contentType });
+    res.writeHead(200, {
+      'Content-Type': contentType,
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
     res.end(content);
   });
 });

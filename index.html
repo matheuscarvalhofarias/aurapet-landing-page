@@ -594,13 +594,13 @@
     </div>
   </section>
 
-  <!-- ANTES E DEPOIS - SLIDER DE TRANSFORMAÇÃO -->
+  <!-- ANTES E DEPOIS - SLIDER DE TRANSFORMAÇÃO AURAPET -->
   <section id="transformacao" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full">
-          Grooming Artístico
+          Grooming Artístico & Spa
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-950 mt-3">
           Veja a mágica acontecer: Deslize para comparar
@@ -608,53 +608,67 @@
         <p class="text-stone-600 mt-2 text-base">
           Transformamos pelagens embaraçadas em verdadeiras obras de arte, sempre priorizando o conforto e o bem-estar do pet.
         </p>
+
       </div>
 
+      <!-- Slider Container Card -->
       <div class="max-w-4xl mx-auto">
-        <div class="glass-card p-4 sm:p-6 rounded-3xl border border-emerald-900/10 shadow-2xl">
+        <div class="glass-card p-3 sm:p-5 rounded-3xl border border-emerald-900/10 shadow-2xl">
           
-          <!-- Slider Component -->
-          <div id="grooming-ba-container" class="ba-container h-[350px] sm:h-[480px] w-full relative cursor-ew-resize">
+          <div id="grooming-ba-container" class="ba-container h-[360px] sm:h-[480px] w-full relative cursor-ew-resize select-none overflow-hidden rounded-2xl">
             
-            <!-- After Image (Bottom Layer) -->
-            <img 
-              id="grooming-ba-after" 
-              src="./Gemini_Generated_Image_3opnr3opnr3opnr3.jpg" 
-              alt="Pet após tosa artística e hidratação na AuraPet" 
-              class="ba-after-image"
-            >
-            <div class="absolute bottom-5 right-5 bg-emerald-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full z-10">
-              ✨ Depois: Spa Ouro & Tosa Bebê
+            <!-- CAMADA DEPOIS (Fundo: Cachorro Limpo e Tosado) -->
+            <div class="absolute inset-0 w-full h-full">
+              <img 
+                id="grooming-ba-after" 
+                src="./Gemini_Generated_Image_3opnr3opnr3opnr3.jpg" 
+                alt="Pet após tosa artística e hidratação na AuraPet" 
+                class="w-full h-full object-cover"
+              >
             </div>
 
-            <!-- Before Image (Top Layer, clipped) -->
-            <img 
-              id="grooming-ba-before" 
-              src="./Gemini_Generated_Image_3v2ln03v2ln03v2l.jpg" 
-              alt="Pet antes dos cuidados de spa" 
-              class="ba-before-image"
-            >
-            <div class="absolute bottom-5 left-5 bg-stone-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full z-10">
-              🐾 Antes: Pelagem ressecada e embaraçada
+            <!-- CAMADA ANTES (Topo: Cachorro Sujo, recortado pelo slider) -->
+            <div id="ba-before-layer" class="ba-before-layer">
+              <img 
+                id="grooming-ba-before" 
+                src="./Gemini_Generated_Image_3v2ln03v2ln03v2l.jpg" 
+                alt="Pet antes dos cuidados de spa" 
+                class="w-full h-full object-cover"
+              >
             </div>
 
-            <!-- Handle Divider -->
+            <!-- Divisor Deslizante com Botão Central -->
             <div id="grooming-ba-handle" class="ba-slider-handle">
               <div class="ba-handle-button">
-                <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
+                <i data-lucide="chevrons-left-right" class="w-5 h-5 text-emerald-950"></i>
+              </div>
+            </div>
+
+            <!-- Sutil gradiente na base para contraste e legibilidade perfeita do texto -->
+            <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none z-10"></div>
+
+            <!-- Texto Antes / Depois dinâmico no meio no bottom (Apenas uma palavra visível por vez) -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none text-center whitespace-nowrap">
+              <div class="relative flex items-center justify-center min-w-[120px] h-7">
+                <span id="ba-label-before" class="text-xs sm:text-sm font-black uppercase tracking-widest text-stone-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)] transition-all duration-200 absolute">
+                  ANTES
+                </span>
+                <span id="ba-label-after" class="text-xs sm:text-sm font-black uppercase tracking-widest text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95)] transition-all duration-200 absolute opacity-0 scale-90 pointer-events-none">
+                  DEPOIS
+                </span>
               </div>
             </div>
 
           </div>
 
-          <!-- Slider Help / Legend -->
+          <!-- Legenda e Instruções -->
           <div class="mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-2 px-2">
-            <span class="flex items-center gap-1.5 font-medium">
+            <span class="flex items-center gap-1.5 font-medium text-stone-600">
               <i data-lucide="mouse-pointer" class="w-4 h-4 text-emerald-700"></i>
-              Arraste o cursor ou toque na tela para alternar entre o antes e o depois
+              Arraste o divisor na foto para comparar a transformação
             </span>
-            <span class="text-emerald-800 font-semibold">
-              Procedimento: Banho com Ozônio + Tosa na Tesoura + Hidratação de Caviar
+            <span class="text-emerald-900 font-semibold text-center sm:text-right">
+              Procedimento: Banho com Ozônio + Tosa Artística na Tesoura + Hidratação de Caviar
             </span>
           </div>
 
